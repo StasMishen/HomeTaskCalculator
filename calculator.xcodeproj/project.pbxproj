@@ -13,8 +13,7 @@
 		9DC0795C262B33C600F36F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0795A262B33C600F36F2B /* Main.storyboard */; };
 		9DC0795E262B33CF00F36F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0795D262B33CF00F36F2B /* Assets.xcassets */; };
 		9DC07961262B33CF00F36F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0795F262B33CF00F36F2B /* LaunchScreen.storyboard */; };
-		9DC0796C262B33D100F36F2B /* calculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0796B262B33D100F36F2B /* calculatorTests.swift */; };
-		9DC07977262B33D100F36F2B /* calculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC07976262B33D100F36F2B /* calculatorUITests.swift */; };
+		9DC07997262C34F200F36F2B /* IBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC07996262C34F200F36F2B /* IBViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +43,8 @@
 		9DC07960262B33CF00F36F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DC07962262B33CF00F36F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC07967262B33D100F36F2B /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DC0796B262B33D100F36F2B /* calculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorTests.swift; sourceTree = "<group>"; };
-		9DC0796D262B33D100F36F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC07972262B33D100F36F2B /* calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DC07976262B33D100F36F2B /* calculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorUITests.swift; sourceTree = "<group>"; };
-		9DC07978262B33D100F36F2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DC07996262C34F200F36F2B /* IBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				9DC07953262B33C600F36F2B /* calculator */,
-				9DC0796A262B33D100F36F2B /* calculatorTests */,
-				9DC07975262B33D100F36F2B /* calculatorUITests */,
 				9DC07952262B33C600F36F2B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,33 +93,64 @@
 		9DC07953262B33C600F36F2B /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				9DC07954262B33C600F36F2B /* AppDelegate.swift */,
-				9DC07956262B33C600F36F2B /* SceneDelegate.swift */,
-				9DC07958262B33C600F36F2B /* ViewController.swift */,
-				9DC0795A262B33C600F36F2B /* Main.storyboard */,
-				9DC0795D262B33CF00F36F2B /* Assets.xcassets */,
-				9DC0795F262B33CF00F36F2B /* LaunchScreen.storyboard */,
-				9DC07962262B33CF00F36F2B /* Info.plist */,
+				9DC0798E262C318900F36F2B /* Source */,
+				9DC0798D262C317800F36F2B /* Resources */,
 			);
 			path = calculator;
 			sourceTree = "<group>";
 		};
-		9DC0796A262B33D100F36F2B /* calculatorTests */ = {
+		9DC0798D262C317800F36F2B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9DC0796B262B33D100F36F2B /* calculatorTests.swift */,
-				9DC0796D262B33D100F36F2B /* Info.plist */,
+				9DC0798F262C319B00F36F2B /* Config */,
+				9DC07990262C31A100F36F2B /* Storyboards */,
+				9DC0795D262B33CF00F36F2B /* Assets.xcassets */,
 			);
-			path = calculatorTests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		9DC07975262B33D100F36F2B /* calculatorUITests */ = {
+		9DC0798E262C318900F36F2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9DC07976262B33D100F36F2B /* calculatorUITests.swift */,
-				9DC07978262B33D100F36F2B /* Info.plist */,
+				9DC07992262C31FC00F36F2B /* Scenes */,
+				9DC07991262C31E200F36F2B /* App */,
 			);
-			path = calculatorUITests;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		9DC0798F262C319B00F36F2B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9DC07962262B33CF00F36F2B /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9DC07990262C31A100F36F2B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0795A262B33C600F36F2B /* Main.storyboard */,
+				9DC0795F262B33CF00F36F2B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9DC07991262C31E200F36F2B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9DC07956262B33C600F36F2B /* SceneDelegate.swift */,
+				9DC07954262B33C600F36F2B /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9DC07992262C31FC00F36F2B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9DC07958262B33C600F36F2B /* ViewController.swift */,
+				9DC07996262C34F200F36F2B /* IBViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +286,7 @@
 				9DC07959262B33C600F36F2B /* ViewController.swift in Sources */,
 				9DC07955262B33C600F36F2B /* AppDelegate.swift in Sources */,
 				9DC07957262B33C600F36F2B /* SceneDelegate.swift in Sources */,
+				9DC07997262C34F200F36F2B /* IBViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DC0796C262B33D100F36F2B /* calculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +301,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DC07977262B33D100F36F2B /* calculatorUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +461,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = calculator/Info.plist;
+				DEVELOPMENT_TEAM = YV7G8332AF;
+				INFOPLIST_FILE = /Users/stas/Documents/calculator/calculator/Resources/Config/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stasmishen.calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -455,7 +481,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = calculator/Info.plist;
+				DEVELOPMENT_TEAM = YV7G8332AF;
+				INFOPLIST_FILE = /Users/stas/Documents/calculator/calculator/Resources/Config/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stasmishen.calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
