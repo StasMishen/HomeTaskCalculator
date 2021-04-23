@@ -462,7 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV7G8332AF;
-				INFOPLIST_FILE = /Users/stas/Documents/calculator/calculator/Resources/Config/Info.plist;
+				INFOPLIST_FILE = "/Users/stas/Documents/calculator 2/calculator/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV7G8332AF;
-				INFOPLIST_FILE = /Users/stas/Documents/calculator/calculator/Resources/Config/Info.plist;
+				INFOPLIST_FILE = "/Users/stas/Documents/calculator 2/calculator/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
