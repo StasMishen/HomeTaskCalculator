@@ -14,6 +14,7 @@
 		9DC0795E262B33CF00F36F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0795D262B33CF00F36F2B /* Assets.xcassets */; };
 		9DC07961262B33CF00F36F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC0795F262B33CF00F36F2B /* LaunchScreen.storyboard */; };
 		9DC07997262C34F200F36F2B /* IBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC07996262C34F200F36F2B /* IBViewController.swift */; };
+		9DDBF550263FB51C00903EFF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBF54F263FB51C00903EFF /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9DC07967262B33D100F36F2B /* calculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC07972262B33D100F36F2B /* calculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC07996262C34F200F36F2B /* IBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBViewController.swift; sourceTree = "<group>"; };
+		9DDBF54F263FB51C00903EFF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				9DC07958262B33C600F36F2B /* ViewController.swift */,
 				9DC07996262C34F200F36F2B /* IBViewController.swift */,
+				9DDBF54F263FB51C00903EFF /* UIViewExtension.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDBF550263FB51C00903EFF /* UIViewExtension.swift in Sources */,
 				9DC07959262B33C600F36F2B /* ViewController.swift in Sources */,
 				9DC07955262B33C600F36F2B /* AppDelegate.swift in Sources */,
 				9DC07957262B33C600F36F2B /* SceneDelegate.swift in Sources */,

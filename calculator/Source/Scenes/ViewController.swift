@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    var orientation: Bool = true
     
     private lazy var resultLabel: UILabel = {
         var label = UILabel()
@@ -20,97 +22,97 @@ class ViewController: UIViewController {
     
     private lazy var divisionButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "/", color: .white, backgroundColor: .systemOrange)
+        return createButton(title: "/", color: .white, backgroundColor: .systemOrange)
     }()
     
     private lazy var multiplyButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "X", color: .white, backgroundColor: .systemOrange)
+        return createButton(title: "X", color: .white, backgroundColor: .systemOrange)
     }()
     
     private lazy var substractButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "-", color: .white, backgroundColor: .systemOrange)
+        return createButton(title: "-", color: .white, backgroundColor: .systemOrange)
     }()
     
     private lazy var summButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "+", color: .white, backgroundColor: .systemOrange)
+        return createButton(title: "+", color: .white, backgroundColor: .systemOrange)
     }()
     
     private lazy var equallyButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "=", color: .white, backgroundColor: .systemOrange)
+        return createButton(title: "=", color: .white, backgroundColor: .systemOrange)
     }()
     
     private lazy var percentButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "%", color: .black, backgroundColor: .systemGray2)
+        return createButton(title: "%", color: .black, backgroundColor: .systemGray2)
     }()
     
     private lazy var nineButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "9", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "9", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var sixButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "6", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "6", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var threeButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "3", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "3", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var pointButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: ".", color: .white, backgroundColor: .darkGray)
+        return createButton(title: ".", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var giveOrTakeButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "+/-", color: .black, backgroundColor: .systemGray2)
+        return createButton(title: "+/-", color: .black, backgroundColor: .systemGray2)
     }()
     
     private lazy var eigthButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "8", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "8", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var fiveButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "5", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "5", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var twoButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "2", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "2", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var zeroButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "0", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "0", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var clearButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "AC", color: .black, backgroundColor: .systemGray2)
+        return createButton(title: "AC", color: .black, backgroundColor: .systemGray2)
     }()
     
     private lazy var sevenButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "7", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "7", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var fourButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "4", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "4", color: .white, backgroundColor: .darkGray)
     }()
     
     private lazy var oneButton: UIButton = {
         var button = UIButton(type: .system)
-        return createButton(button: button, title: "1", color: .white, backgroundColor: .darkGray)
+        return createButton(title: "1", color: .white, backgroundColor: .darkGray)
     }()
     
     // MARK: -Lifecycle
@@ -125,24 +127,23 @@ class ViewController: UIViewController {
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         switch UIDevice.current.orientation{
         case .portrait:
+            orientation = true
             view.clearConstraints()
-            setupHierarchy()
             setupLayout()
         case .portraitUpsideDown:
+            orientation = true
             view.clearConstraints()
-            setupHierarchy()
             setupLayout()
         case .landscapeLeft:
+            orientation = false
             view.clearConstraints()
-            setupHierarchy()
-            setupLayoutLandscape()
+            setupLayout()
         case .landscapeRight:
+            orientation = false
             view.clearConstraints()
-            setupHierarchy()
-            setupLayoutLandscape()
+            setupLayout()
         default:
             view.clearConstraints()
-            setupHierarchy()
             setupLayout()
         }
     }
@@ -150,304 +151,238 @@ class ViewController: UIViewController {
     // MARK: -Settings
     
     private func setupHierarchy() {
-        view.addSubview(zeroButton)
-        view.addSubview(pointButton)
-        view.addSubview(equallyButton)
-        view.addSubview(oneButton)
-        view.addSubview(twoButton)
-        view.addSubview(threeButton)
-        view.addSubview(summButton)
-        view.addSubview(fourButton)
-        view.addSubview(fiveButton)
-        view.addSubview(sixButton)
-        view.addSubview(substractButton)
-        view.addSubview(sevenButton)
-        view.addSubview(eigthButton)
-        view.addSubview(nineButton)
-        view.addSubview(multiplyButton)
-        view.addSubview(clearButton)
-        view.addSubview(giveOrTakeButton)
-        view.addSubview(percentButton)
-        view.addSubview(divisionButton)
-        view.addSubview(resultLabel)
+        view.addSubviews(zeroButton, pointButton, equallyButton, oneButton, twoButton, threeButton, summButton, fourButton, fiveButton, sixButton, substractButton, sevenButton, eigthButton, nineButton, multiplyButton, clearButton, giveOrTakeButton, percentButton, divisionButton, resultLabel)
     }
-    
-    // MARK: -Portrait orientation
+
     private func setupLayout() {
+
+        if orientation == true {
+            Metric.fontSize = 70
+            Metric.leftAnchorView = 28
+            Metric.bottomAnchorView = 40
+            Metric.bottomAnchorButton = 18
+            Metric.leftAnchorButton = 18
+            Metric.fontSizeButton = 28
+            Metric.rightAnchorLabel = 28
+            Metric.leftAnchorLabel = 28
+            Metric.bottomAnchorLabel = 20
+        } else {
+            Metric.fontSize = 60
+            Metric.leftAnchorView = 50
+            Metric.bottomAnchorView = 40
+            Metric.bottomAnchorButton = 10
+            Metric.leftAnchorButton = 10
+            Metric.fontSizeButton = 20
+            Metric.rightAnchorLabel = 50
+            Metric.leftAnchorLabel = 50
+            Metric.bottomAnchorLabel = 10
+        }
         
         // 0
-        zeroButton.translatesAutoresizingMaskIntoConstraints = false
-        zeroButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorView).isActive = true
-        zeroButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Metric.bottomAnchorView).isActive = true
-        buttonAnchorSize(to: zeroButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButtonZero)
-        
+        zeroButton.addConstraints(left: view.leadingAnchor,
+                                  paddingLeft: Metric.leftAnchorView,
+                                  bottom: view.bottomAnchor,
+                                  paddingBottom: Metric.bottomAnchorView,
+                                  width: sizeButtonWidth() * 2 + Metric.leftAnchorButton,
+                                  height: sizeButtonHeigth(),
+                                  cornerRadius: buttonCornerRadius())
+
         // .
-        pointButton.translatesAutoresizingMaskIntoConstraints = false
-        pointButton.leftAnchor.constraint(equalTo: zeroButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        pointButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Metric.bottomAnchorView).isActive = true
-        buttonAnchorSize(to: pointButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        pointButton.addConstraints(left: zeroButton.trailingAnchor,
+                                   paddingLeft: Metric.leftAnchorButton,
+                                   bottom: view.bottomAnchor,
+                                   paddingBottom: Metric.bottomAnchorView,
+                                   width: sizeButtonWidth(),
+                                   height: sizeButtonHeigth(),
+                                   cornerRadius: buttonCornerRadius())
+
         // =
-        equallyButton.translatesAutoresizingMaskIntoConstraints = false
-        equallyButton.leftAnchor.constraint(equalTo: pointButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        equallyButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: Metric.bottomAnchorView).isActive = true
-        buttonAnchorSize(to: equallyButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        equallyButton.addConstraints(left: pointButton.trailingAnchor,
+                                     paddingLeft: Metric.leftAnchorButton,
+                                     bottom: view.bottomAnchor,
+                                     paddingBottom: Metric.bottomAnchorView,
+                                     width: sizeButtonWidth(),
+                                     height: sizeButtonHeigth(),
+                                     cornerRadius: buttonCornerRadius())
+
         // 1
-        oneButton.translatesAutoresizingMaskIntoConstraints = false
-        oneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorView).isActive = true
-        oneButton.bottomAnchor.constraint(equalTo: zeroButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: oneButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        oneButton.addConstraints(left: view.leadingAnchor,
+                                 paddingLeft: Metric.leftAnchorView,
+                                 bottom: zeroButton.topAnchor,
+                                 paddingBottom: Metric.bottomAnchorButton,
+                                 width: sizeButtonWidth(),
+                                 height: sizeButtonHeigth(),
+                                 cornerRadius: buttonCornerRadius())
+
         // 2
-        twoButton.translatesAutoresizingMaskIntoConstraints = false
-        twoButton.leftAnchor.constraint(equalTo: oneButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        twoButton.bottomAnchor.constraint(equalTo: zeroButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: twoButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        twoButton.addConstraints(left: oneButton.trailingAnchor,
+                                 paddingLeft: Metric.leftAnchorButton,
+                                 bottom: zeroButton.topAnchor,
+                                 paddingBottom: Metric.bottomAnchorButton,
+                                 width: sizeButtonWidth(),
+                                 height: sizeButtonHeigth(),
+                                 cornerRadius: buttonCornerRadius())
         // 3
-        threeButton.translatesAutoresizingMaskIntoConstraints = false
-        threeButton.leftAnchor.constraint(equalTo: twoButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        threeButton.bottomAnchor.constraint(equalTo: pointButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: threeButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        threeButton.addConstraints(left: twoButton.trailingAnchor,
+                                   paddingLeft: Metric.leftAnchorButton,
+                                   bottom: pointButton.topAnchor,
+                                   paddingBottom: Metric.bottomAnchorButton,
+                                   width: sizeButtonWidth(),
+                                   height: sizeButtonHeigth(),
+                                   cornerRadius: buttonCornerRadius())
         // +
-        summButton.translatesAutoresizingMaskIntoConstraints = false
-        summButton.leftAnchor.constraint(equalTo: threeButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        summButton.bottomAnchor.constraint(equalTo: equallyButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: summButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
-        
+        summButton.addConstraints(left: threeButton.trailingAnchor,
+                                  paddingLeft: Metric.leftAnchorButton,
+                                  bottom: equallyButton.topAnchor,
+                                  paddingBottom: Metric.bottomAnchorButton,
+                                  width: sizeButtonWidth(),
+                                  height: sizeButtonHeigth(),
+                                  cornerRadius: buttonCornerRadius())
+
         // 4
-        fourButton.translatesAutoresizingMaskIntoConstraints = false
-        fourButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorView).isActive = true
-        fourButton.bottomAnchor.constraint(equalTo: oneButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: fourButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        fourButton.addConstraints(left: view.leadingAnchor,
+                                  paddingLeft: Metric.leftAnchorView,
+                                  bottom: oneButton.topAnchor,
+                                  paddingBottom: Metric.bottomAnchorButton,
+                                  width: sizeButtonWidth(),
+                                  height: sizeButtonHeigth(),
+                                  cornerRadius: buttonCornerRadius())
+
         // 5
-        fiveButton.translatesAutoresizingMaskIntoConstraints = false
-        fiveButton.leftAnchor.constraint(equalTo: fourButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        fiveButton.bottomAnchor.constraint(equalTo: twoButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: fiveButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        fiveButton.addConstraints(left: fourButton.trailingAnchor,
+                                  paddingLeft: Metric.leftAnchorButton,
+                                  bottom: twoButton.topAnchor,
+                                  paddingBottom: Metric.bottomAnchorButton,
+                                  width: sizeButtonWidth(),
+                                  height: sizeButtonHeigth(),
+                                  cornerRadius: buttonCornerRadius())
+
         // 6
-        sixButton.translatesAutoresizingMaskIntoConstraints = false
-        sixButton.leftAnchor.constraint(equalTo: fiveButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        sixButton.bottomAnchor.constraint(equalTo: threeButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: sixButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        sixButton.addConstraints(left: fiveButton.trailingAnchor,
+                                 paddingLeft: Metric.leftAnchorButton,
+                                 bottom: threeButton.topAnchor,
+                                 paddingBottom: Metric.bottomAnchorButton,
+                                 width: sizeButtonWidth(),
+                                 height: sizeButtonHeigth(),
+                                 cornerRadius: buttonCornerRadius())
+
         // -
-        substractButton.translatesAutoresizingMaskIntoConstraints = false
-        substractButton.leftAnchor.constraint(equalTo: sixButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        substractButton.bottomAnchor.constraint(equalTo: summButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: substractButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        substractButton.addConstraints(left: sixButton.trailingAnchor,
+                                       paddingLeft: Metric.leftAnchorButton,
+                                       bottom: summButton.topAnchor,
+                                       paddingBottom: Metric.bottomAnchorButton,
+                                       width: sizeButtonWidth(),
+                                       height: sizeButtonHeigth(),
+                                       cornerRadius: buttonCornerRadius())
+
         // 7
-        sevenButton.translatesAutoresizingMaskIntoConstraints = false
-        sevenButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorView).isActive = true
-        sevenButton.bottomAnchor.constraint(equalTo: fourButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: sevenButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        sevenButton.addConstraints(left: view.leadingAnchor,
+                                   paddingLeft: Metric.leftAnchorView,
+                                   bottom: fourButton.topAnchor,
+                                   paddingBottom: Metric.bottomAnchorButton,
+                                   width: sizeButtonWidth(),
+                                   height: sizeButtonHeigth(),
+                                   cornerRadius: buttonCornerRadius())
+
         // 8
-        eigthButton.translatesAutoresizingMaskIntoConstraints = false
-        eigthButton.leftAnchor.constraint(equalTo: sevenButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        eigthButton.bottomAnchor.constraint(equalTo: fiveButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: eigthButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        eigthButton.addConstraints(left: sevenButton.trailingAnchor,
+                                   paddingLeft: Metric.leftAnchorButton,
+                                   bottom: fiveButton.topAnchor,
+                                   paddingBottom: Metric.bottomAnchorButton,
+                                   width: sizeButtonWidth(),
+                                   height: sizeButtonHeigth(),
+                                   cornerRadius: buttonCornerRadius())
+
         // 9
-        nineButton.translatesAutoresizingMaskIntoConstraints = false
-        nineButton.leftAnchor.constraint(equalTo: eigthButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        nineButton.bottomAnchor.constraint(equalTo: sixButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: nineButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        nineButton.addConstraints(left: eigthButton.trailingAnchor,
+                                  paddingLeft: Metric.leftAnchorButton,
+                                  bottom: sixButton.topAnchor,
+                                  paddingBottom: Metric.bottomAnchorButton,
+                                  width: sizeButtonWidth(),
+                                  height: sizeButtonHeigth(),
+                                  cornerRadius: buttonCornerRadius())
+
         // *
-        multiplyButton.translatesAutoresizingMaskIntoConstraints = false
-        multiplyButton.leftAnchor.constraint(equalTo: nineButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        multiplyButton.bottomAnchor.constraint(equalTo: substractButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: multiplyButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        multiplyButton.addConstraints(left: nineButton.trailingAnchor,
+                                      paddingLeft: Metric.leftAnchorButton,
+                                      bottom: substractButton.topAnchor,
+                                      paddingBottom: Metric.bottomAnchorButton,
+                                      width: sizeButtonWidth(),
+                                      height: sizeButtonHeigth(),
+                                      cornerRadius: buttonCornerRadius())
+
         // AC
-        clearButton.translatesAutoresizingMaskIntoConstraints = false
-        clearButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorView).isActive = true
-        clearButton.bottomAnchor.constraint(equalTo: sevenButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: clearButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        clearButton.addConstraints(left: view.leadingAnchor,
+                                   paddingLeft: Metric.leftAnchorView,
+                                   bottom: sevenButton.topAnchor,
+                                   paddingBottom: Metric.bottomAnchorButton,
+                                   width: sizeButtonWidth(),
+                                   height: sizeButtonHeigth(),
+                                   cornerRadius: buttonCornerRadius())
         // +/-
-        giveOrTakeButton.translatesAutoresizingMaskIntoConstraints = false
-        giveOrTakeButton.leftAnchor.constraint(equalTo: clearButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        giveOrTakeButton.bottomAnchor.constraint(equalTo: eigthButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: giveOrTakeButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        giveOrTakeButton.addConstraints(left: clearButton.trailingAnchor,
+                                        paddingLeft: Metric.leftAnchorButton,
+                                        bottom: eigthButton.topAnchor,
+                                        paddingBottom: Metric.bottomAnchorButton,
+                                        width: sizeButtonWidth(),
+                                        height: sizeButtonHeigth(),
+                                        cornerRadius: buttonCornerRadius())
+
         // %
-        percentButton.translatesAutoresizingMaskIntoConstraints = false
-        percentButton.leftAnchor.constraint(equalTo: giveOrTakeButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        percentButton.bottomAnchor.constraint(equalTo: nineButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: percentButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        percentButton.addConstraints(left: giveOrTakeButton.trailingAnchor,
+                                     paddingLeft: Metric.leftAnchorButton,
+                                     bottom: nineButton.topAnchor,
+                                     paddingBottom: Metric.bottomAnchorButton,
+                                     width: sizeButtonWidth(),
+                                     height: sizeButtonHeigth(),
+                                     cornerRadius: buttonCornerRadius())
         // /
-        divisionButton.translatesAutoresizingMaskIntoConstraints = false
-        divisionButton.leftAnchor.constraint(equalTo: percentButton.rightAnchor, constant: Metric.leftAnchorButton).isActive = true
-        divisionButton.bottomAnchor.constraint(equalTo: multiplyButton.topAnchor, constant: Metric.bottomAnchorButton).isActive = true
-        buttonAnchorSize(to: divisionButton, height: Metric.heightAnchorButton, width: Metric.widthAnchorButton)
-        
+        divisionButton.addConstraints(left: percentButton.trailingAnchor,
+                                      paddingLeft: Metric.leftAnchorButton,
+                                      bottom: multiplyButton.topAnchor,
+                                      paddingBottom: Metric.bottomAnchorButton,
+                                      width: sizeButtonWidth(),
+                                      height: sizeButtonHeigth(),
+                                      cornerRadius: buttonCornerRadius())
+
         // label
-        resultLabel.translatesAutoresizingMaskIntoConstraints = false
-        resultLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Metric.rightAnchorLabel).isActive = true
-        resultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Metric.leftAnchorLabel).isActive = true
-        resultLabel.bottomAnchor.constraint(equalTo: divisionButton.topAnchor, constant: Metric.bottomAnchorLabel).isActive = true
-        resultLabel.heightAnchor.constraint(equalToConstant: Metric.heightAnchorLayer).isActive = true
-        resultLabel.widthAnchor.constraint(equalToConstant: Metric.widthAnchorLayer).isActive = true
+        resultLabel.addConstraints(left: view.leadingAnchor,
+                                   paddingLeft: Metric.leftAnchorLabel,
+                                   right: view.trailingAnchor,
+                                   paddingRight: Metric.rightAnchorLabel,
+                                   bottom: divisionButton.topAnchor,
+                                   paddingBottom: Metric.bottomAnchorLabel,
+                                   width: view.frame.size.width - Metric.leftAnchorLabel - Metric.rightAnchorLabel,
+                                   height: Metric.heightAnchorLayer)
     }
-    
-    // MARK: -Landscape orientation
-    
-    private func setupLayoutLandscape() {
-        
-        // 0
-        zeroButton.translatesAutoresizingMaskIntoConstraints = false
-        zeroButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorView).isActive = true
-        zeroButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: MetricLandscape.bottomAnchorView).isActive = true
-        buttonAnchorSizeLandscape(to: zeroButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButtonZero)
-        
-        // .
-        pointButton.translatesAutoresizingMaskIntoConstraints = false
-        pointButton.leftAnchor.constraint(equalTo: zeroButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        pointButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: MetricLandscape.bottomAnchorView).isActive = true
-        buttonAnchorSizeLandscape(to: pointButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // =
-        equallyButton.translatesAutoresizingMaskIntoConstraints = false
-        equallyButton.leftAnchor.constraint(equalTo: pointButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        equallyButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: MetricLandscape.bottomAnchorView).isActive = true
-        buttonAnchorSizeLandscape(to: equallyButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 1
-        oneButton.translatesAutoresizingMaskIntoConstraints = false
-        oneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorView).isActive = true
-        oneButton.bottomAnchor.constraint(equalTo: zeroButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: oneButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 2
-        twoButton.translatesAutoresizingMaskIntoConstraints = false
-        twoButton.leftAnchor.constraint(equalTo: oneButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        twoButton.bottomAnchor.constraint(equalTo: zeroButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: twoButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 3
-        threeButton.translatesAutoresizingMaskIntoConstraints = false
-        threeButton.leftAnchor.constraint(equalTo: twoButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        threeButton.bottomAnchor.constraint(equalTo: pointButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: threeButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // +
-        summButton.translatesAutoresizingMaskIntoConstraints = false
-        summButton.leftAnchor.constraint(equalTo: threeButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        summButton.bottomAnchor.constraint(equalTo: equallyButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: summButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 4
-        fourButton.translatesAutoresizingMaskIntoConstraints = false
-        fourButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorView).isActive = true
-        fourButton.bottomAnchor.constraint(equalTo: oneButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: fourButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 5
-        fiveButton.translatesAutoresizingMaskIntoConstraints = false
-        fiveButton.leftAnchor.constraint(equalTo: fourButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        fiveButton.bottomAnchor.constraint(equalTo: twoButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: fiveButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 6
-        sixButton.translatesAutoresizingMaskIntoConstraints = false
-        sixButton.leftAnchor.constraint(equalTo: fiveButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        sixButton.bottomAnchor.constraint(equalTo: threeButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: sixButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // -
-        substractButton.translatesAutoresizingMaskIntoConstraints = false
-        substractButton.leftAnchor.constraint(equalTo: sixButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        substractButton.bottomAnchor.constraint(equalTo: summButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: substractButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 7
-        sevenButton.translatesAutoresizingMaskIntoConstraints = false
-        sevenButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorView).isActive = true
-        sevenButton.bottomAnchor.constraint(equalTo: fourButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: sevenButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 8
-        eigthButton.translatesAutoresizingMaskIntoConstraints = false
-        eigthButton.leftAnchor.constraint(equalTo: sevenButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        eigthButton.bottomAnchor.constraint(equalTo: fiveButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: eigthButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // 9
-        nineButton.translatesAutoresizingMaskIntoConstraints = false
-        nineButton.leftAnchor.constraint(equalTo: eigthButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        nineButton.bottomAnchor.constraint(equalTo: sixButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: nineButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // *
-        multiplyButton.translatesAutoresizingMaskIntoConstraints = false
-        multiplyButton.leftAnchor.constraint(equalTo: nineButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        multiplyButton.bottomAnchor.constraint(equalTo: substractButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: multiplyButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // AC
-        clearButton.translatesAutoresizingMaskIntoConstraints = false
-        clearButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorView).isActive = true
-        clearButton.bottomAnchor.constraint(equalTo: sevenButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: clearButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // +/-
-        giveOrTakeButton.translatesAutoresizingMaskIntoConstraints = false
-        giveOrTakeButton.leftAnchor.constraint(equalTo: clearButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        giveOrTakeButton.bottomAnchor.constraint(equalTo: eigthButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: giveOrTakeButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // %
-        percentButton.translatesAutoresizingMaskIntoConstraints = false
-        percentButton.leftAnchor.constraint(equalTo: giveOrTakeButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        percentButton.bottomAnchor.constraint(equalTo: nineButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: percentButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // /
-        divisionButton.translatesAutoresizingMaskIntoConstraints = false
-        divisionButton.leftAnchor.constraint(equalTo: percentButton.rightAnchor, constant: MetricLandscape.leftAnchorButton).isActive = true
-        divisionButton.bottomAnchor.constraint(equalTo: multiplyButton.topAnchor, constant: MetricLandscape.bottomAnchorButton).isActive = true
-        buttonAnchorSizeLandscape(to: divisionButton, height: MetricLandscape.heightAnchorButton, width: MetricLandscape.widthAnchorButton)
-        
-        // label
-        resultLabel.translatesAutoresizingMaskIntoConstraints = false
-        resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        resultLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: MetricLandscape.rightAnchorLabel).isActive = true
-        resultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: MetricLandscape.leftAnchorLabel).isActive = true
-        resultLabel.bottomAnchor.constraint(equalTo: divisionButton.topAnchor, constant: MetricLandscape.bottomAnchorLabel).isActive = true
-        resultLabel.heightAnchor.constraint(equalToConstant: MetricLandscape.heightAnchorLayer).isActive = true
-        resultLabel.widthAnchor.constraint(equalToConstant: MetricLandscape.widthAnchorLayer).isActive = true
-    }
-    
+
     private func setupView() {
         view.backgroundColor = .black
     }
     
     // MARK: -Privat func
-    
-    private func buttonAnchorSize (to button: UIButton, height: CGFloat, width: CGFloat) {
-        button.heightAnchor.constraint(equalToConstant: height).isActive = true
-        button.widthAnchor.constraint(equalToConstant: width).isActive = true
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = Metric.cornerRadius
+
+    private func sizeButtonWidth() -> CGFloat {
+        return (view.frame.size.width - (Metric.leftAnchorButton * 3) - (Metric.leftAnchorView * 2)) / 4
+    }
+
+    private func sizeButtonHeigth() -> CGFloat {
+        if orientation == true {
+        return (view.frame.size.width - (Metric.leftAnchorButton * 3) - (Metric.leftAnchorView * 2)) / 4
+        } else {
+            return ((view.frame.size.width - (Metric.leftAnchorButton * 3) - (Metric.leftAnchorView * 2)) / 4) / 5
+        }
+    }
+    private func buttonCornerRadius() -> CGFloat {
+        if orientation == true {
+        return ((view.frame.size.width - (Metric.leftAnchorButton * 3) - (Metric.leftAnchorView * 2)) / 4) / 2
+        } else {
+            return ((view.frame.size.width - (Metric.leftAnchorButton * 3) - (Metric.leftAnchorView * 2)) / 4) / 10
+        }
     }
     
-    private func buttonAnchorSizeLandscape (to button: UIButton, height: CGFloat, width: CGFloat) {
-        button.heightAnchor.constraint(equalToConstant: height).isActive = true
-        button.widthAnchor.constraint(equalToConstant: width).isActive = true
-        button.layer.masksToBounds = true
-        button.layer.cornerRadius = MetricLandscape.cornerRadius
-    }
-    
-    private func createButton (button: UIButton, title: String, color: UIColor, backgroundColor: UIColor) -> UIButton {
+    private func createButton(title: String, color: UIColor, backgroundColor: UIColor) -> UIButton {
+        let button = UIButton()
         button.setTitle(title, for: .normal)
         button.setTitleColor(color, for: .normal)
         button.backgroundColor = backgroundColor
@@ -461,39 +396,14 @@ extension ViewController {
     enum Metric {
         static var fontSize: CGFloat = 70
         static var leftAnchorView: CGFloat = 28
-        static var bottomAnchorView: CGFloat = -40
-        static var bottomAnchorButton: CGFloat = -18
+        static var bottomAnchorView: CGFloat = 40
+        static var bottomAnchorButton: CGFloat = 18
         static var leftAnchorButton: CGFloat = 18
-        static var rightAnchorButton: CGFloat = -18
-        static var heightAnchorButton: CGFloat = 80
-        static var widthAnchorButtonZero: CGFloat = 178
-        static var widthAnchorButton: CGFloat = 80
         static var fontSizeButton: CGFloat = 28
-        static var rightAnchorLabel: CGFloat = -28
+        static var rightAnchorLabel: CGFloat = 28
         static var leftAnchorLabel: CGFloat = 28
-        static var bottomAnchorLabel: CGFloat = -20
-        static var cornerRadius: CGFloat = 40
+        static var bottomAnchorLabel: CGFloat = 20
         static var heightAnchorLayer: CGFloat = 100
-        static var widthAnchorLayer: CGFloat = 500
-    }
-    
-    enum MetricLandscape {
-        static var fontSize: CGFloat = 70
-        static var leftAnchorView: CGFloat = 100
-        static var bottomAnchorView: CGFloat = -20
-        static var bottomAnchorButton: CGFloat = -20
-        static var leftAnchorButton: CGFloat = 20
-        static var rightAnchorButton: CGFloat = -20
-        static var heightAnchorButton: CGFloat = 40
-        static var widthAnchorButtonZero: CGFloat = 356
-        static var widthAnchorButton: CGFloat = 168
-        static var fontSizeButton: CGFloat = 20
-        static var rightAnchorLabel: CGFloat = -100
-        static var leftAnchorLabel: CGFloat = 100
-        static var bottomAnchorLabel: CGFloat = -20
-        static var cornerRadius: CGFloat = 20
-        static var heightAnchorLayer: CGFloat = 100
-        static var widthAnchorLayer: CGFloat = 1000
     }
 }
 
