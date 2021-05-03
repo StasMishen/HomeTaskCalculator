@@ -124,6 +124,8 @@ class ViewController: UIViewController {
         setupLayout()
     }
     
+    // MARK: -Settings
+
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         switch UIDevice.current.orientation{
         case .portrait:
@@ -147,8 +149,6 @@ class ViewController: UIViewController {
             setupLayout()
         }
     }
-    
-    // MARK: -Settings
     
     private func setupHierarchy() {
         view.addSubviews(zeroButton, pointButton, equallyButton, oneButton, twoButton, threeButton, summButton, fourButton, fiveButton, sixButton, substractButton, sevenButton, eigthButton, nineButton, multiplyButton, clearButton, giveOrTakeButton, percentButton, divisionButton, resultLabel)
