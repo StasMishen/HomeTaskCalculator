@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="Code View Controller" customClass="ViewController" customModule="calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="113"/>
+        </scene>
+        <!--IB View Controller-->
+        <scene sceneID="wfI-QV-rhr">
+            <objects>
+                <viewController id="KI2-xb-SLF" userLabel="IB View Controller" customClass="IBViewController" customModule="calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HBz-Ip-Co8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-IZ-Vfv">
+                                <rect key="frame" x="18" y="229.33333333333334" width="378" height="80.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-7D-zay">
+                                <rect key="frame" x="18" y="340" width="378" height="477"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1TE-sT-9F0" userLabel="1 line">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="81"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5m-yz-lKl" userLabel="aCButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="y5m-yz-lKl" secondAttribute="height" multiplier="1:1" id="kIv-Jx-WMf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="kIv-Jx-WMf"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="kIv-Jx-WMf"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="aCButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="5JM-f4-4cT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z59-OE-hqb" userLabel="give Or Take Button">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Z59-OE-hqb" secondAttribute="height" multiplier="1:1" id="zhx-tO-93U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="+/-">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="zhx-tO-93U"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="zhx-tO-93U"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="giveOrTakeButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="55W-ED-Yt2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHp-fh-eLc" userLabel="percent Button">
+                                                <rect key="frame" x="198" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="HHp-fh-eLc" secondAttribute="height" multiplier="1:1" id="5np-iy-cl9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5np-iy-cl9"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="5np-iy-cl9"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="percentButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="caK-4K-ucl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMb-MZ-LrQ" userLabel="division Button">
+                                                <rect key="frame" x="297" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cMb-MZ-LrQ" secondAttribute="height" multiplier="1:1" id="Geg-8C-qoI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="/">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Geg-8C-qoI"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="Geg-8C-qoI"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="divisionButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="XzA-t6-bMg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-SI-WrO" userLabel="2 line">
+                                        <rect key="frame" x="0.0" y="99" width="378" height="81"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRA-op-TpS" userLabel="seven Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oRA-op-TpS" secondAttribute="height" multiplier="1:1" id="W9F-Ze-bmd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="W9F-Ze-bmd"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="W9F-Ze-bmd"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="ydR-gx-9bJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVr-PM-Ogv" userLabel="eight Button">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="CVr-PM-Ogv" secondAttribute="height" multiplier="1:1" id="4tu-QG-Ula"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="4tu-QG-Ula"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="4tu-QG-Ula"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="a8m-tA-xnk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="up6-Zi-0bG" userLabel="nine Button">
+                                                <rect key="frame" x="198" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="up6-Zi-0bG" secondAttribute="height" multiplier="1:1" id="xKw-c7-RuH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="xKw-c7-RuH"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="xKw-c7-RuH"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="peX-Rg-N2w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN0-ol-Tyd" userLabel="multiply Button">
+                                                <rect key="frame" x="297" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gN0-ol-Tyd" secondAttribute="height" multiplier="1:1" id="h8s-Yt-7rc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="h8s-Yt-7rc"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="h8s-Yt-7rc"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="multiplyButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="Zgv-Kt-vC5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-89-zlN" userLabel="3 line">
+                                        <rect key="frame" x="0.0" y="198" width="378" height="81"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0a-VY-MFE" userLabel="four Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="n0a-VY-MFE" secondAttribute="height" multiplier="1:1" id="TiT-lN-CUL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="TiT-lN-CUL"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="TiT-lN-CUL"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="TN2-9D-NMO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbj-lA-tlY" userLabel="five Button">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bbj-lA-tlY" secondAttribute="height" multiplier="1:1" id="2Yo-iN-Nx6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="2Yo-iN-Nx6"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="2Yo-iN-Nx6"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="Mfh-XD-95Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIK-n1-EgU" userLabel="six Button">
+                                                <rect key="frame" x="198" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tIK-n1-EgU" secondAttribute="height" multiplier="1:1" id="gKQ-FI-ruy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="gKQ-FI-ruy"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="gKQ-FI-ruy"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="Jdc-aJ-hn5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoS-Kx-tQl" userLabel="substract Button">
+                                                <rect key="frame" x="297" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uoS-Kx-tQl" secondAttribute="height" multiplier="1:1" id="JEV-Pf-uUf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="JEV-Pf-uUf"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="JEV-Pf-uUf"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="substractButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="Q4L-kv-OiK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-YZ-cEc" userLabel="4 line">
+                                        <rect key="frame" x="0.0" y="297" width="378" height="81"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z94-Rr-lV2" userLabel="one Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="z94-Rr-lV2" secondAttribute="height" multiplier="1:1" id="d5G-yk-SCT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="d5G-yk-SCT"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="d5G-yk-SCT"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="fk6-Sb-LgI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT7-Pz-tS3" userLabel="two Button">
+                                                <rect key="frame" x="99" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KT7-Pz-tS3" secondAttribute="height" multiplier="1:1" id="4t9-tf-zVV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="4t9-tf-zVV"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="4t9-tf-zVV"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="s0n-8L-1Bx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzZ-QN-ZyV" userLabel="three Button">
+                                                <rect key="frame" x="198" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uzZ-QN-ZyV" secondAttribute="height" multiplier="1:1" id="frg-0A-Zu4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="frg-0A-Zu4"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="frg-0A-Zu4"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="1Zl-df-29x"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIC-1W-ENB" userLabel="summ Button">
+                                                <rect key="frame" x="297" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IIC-1W-ENB" secondAttribute="height" multiplier="1:1" id="DJ5-wU-7Gg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="DJ5-wU-7Gg"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="DJ5-wU-7Gg"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="summButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="QUp-nP-m9V"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-30-dTo" userLabel="5 line">
+                                        <rect key="frame" x="0.0" y="396" width="378" height="81"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kND-OV-7gh" userLabel="zero Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kND-OV-7gh" secondAttribute="height" multiplier="187:84" id="EdY-g1-LaU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="EdY-g1-LaU"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <exclude reference="EdY-g1-LaU"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="digits:" destination="KI2-xb-SLF" eventType="touchUpInside" id="vVM-0z-0pp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXr-v3-qmG" userLabel="point Button">
+                                                <rect key="frame" x="198" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="EXr-v3-qmG" secondAttribute="height" multiplier="1:1" id="mML-lU-g7v"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title=",">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="mML-lU-g7v"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="mML-lU-g7v"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="pointButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="yuv-Rl-2Y2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xc6-iV-o9a" userLabel="equally Button">
+                                                <rect key="frame" x="297" y="0.0" width="81" height="81"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xc6-iV-o9a" secondAttribute="height" multiplier="1:1" id="xS6-qh-3fH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="xS6-qh-3fH"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular">
+                                                    <mask key="constraints">
+                                                        <include reference="xS6-qh-3fH"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="equallyButton:" destination="KI2-xb-SLF" eventType="touchUpInside" id="OL9-kT-Oy5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xc6-iV-o9a" firstAttribute="width" secondItem="IIC-1W-ENB" secondAttribute="width" id="ogW-5C-l3u"/>
+                                    <constraint firstItem="EXr-v3-qmG" firstAttribute="width" secondItem="uzZ-QN-ZyV" secondAttribute="width" id="rOJ-K4-xvY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bhK-eX-Rjo"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cZy-IZ-Vfv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bhK-eX-Rjo" secondAttribute="leading" symbolic="YES" id="4Ek-iZ-Puy"/>
+                            <constraint firstItem="cZy-IZ-Vfv" firstAttribute="leading" secondItem="bhK-eX-Rjo" secondAttribute="leading" constant="50" id="8K2-Ec-XWd"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="height" relation="lessThanOrEqual" secondItem="HBz-Ip-Co8" secondAttribute="height" multiplier="0.55" id="FAi-Ly-ufO"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="centerX" secondItem="HBz-Ip-Co8" secondAttribute="centerX" id="FMn-N2-AUu"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="top" secondItem="cZy-IZ-Vfv" secondAttribute="bottom" constant="30" id="LoC-gq-Ngj"/>
+                            <constraint firstItem="bhK-eX-Rjo" firstAttribute="trailing" secondItem="9yS-7D-zay" secondAttribute="trailing" constant="50" id="PPz-am-npp"/>
+                            <constraint firstItem="cZy-IZ-Vfv" firstAttribute="leading" secondItem="bhK-eX-Rjo" secondAttribute="leading" constant="18" id="Uh4-O9-39J"/>
+                            <constraint firstItem="bhK-eX-Rjo" firstAttribute="trailing" secondItem="cZy-IZ-Vfv" secondAttribute="trailing" constant="50" id="WPO-Ub-589">
+                                <variation key="heightClass=regular" constant="18"/>
+                            </constraint>
+                            <constraint firstItem="bhK-eX-Rjo" firstAttribute="trailing" secondItem="9yS-7D-zay" secondAttribute="trailing" constant="18" id="XFj-DH-7xd"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="leading" secondItem="bhK-eX-Rjo" secondAttribute="leading" constant="18" id="jin-Ga-bgW"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="leading" secondItem="bhK-eX-Rjo" secondAttribute="leading" constant="50" id="qmI-PM-2VG"/>
+                            <constraint firstItem="9yS-7D-zay" firstAttribute="centerX" secondItem="HBz-Ip-Co8" secondAttribute="centerX" id="tDT-vc-mHq"/>
+                            <constraint firstItem="bhK-eX-Rjo" firstAttribute="bottom" secondItem="9yS-7D-zay" secondAttribute="bottom" constant="45" id="tQl-58-GQh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8K2-Ec-XWd"/>
+                                <exclude reference="Uh4-O9-39J"/>
+                                <exclude reference="FMn-N2-AUu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="PPz-am-npp"/>
+                                <include reference="Uh4-O9-39J"/>
+                                <include reference="FMn-N2-AUu"/>
+                                <exclude reference="qmI-PM-2VG"/>
+                                <exclude reference="tDT-vc-mHq"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="XFj-DH-7xd"/>
+                                <include reference="8K2-Ec-XWd"/>
+                                <exclude reference="jin-Ga-bgW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="clearButton" destination="y5m-yz-lKl" id="6tU-oj-fTV"/>
+                        <outlet property="divisionButton" destination="cMb-MZ-LrQ" id="y3a-9q-rCQ"/>
+                        <outlet property="eigthButton" destination="CVr-PM-Ogv" id="wn8-39-iYy"/>
+                        <outlet property="equallyButton" destination="xc6-iV-o9a" id="6b5-o4-Pd9"/>
+                        <outlet property="fiveButton" destination="bbj-lA-tlY" id="I1m-wM-31E"/>
+                        <outlet property="fourButton" destination="n0a-VY-MFE" id="K8l-PC-ZAn"/>
+                        <outlet property="giveOrTakeButton" destination="Z59-OE-hqb" id="M8m-V9-olM"/>
+                        <outlet property="multiplyButton" destination="gN0-ol-Tyd" id="87X-zo-hhV"/>
+                        <outlet property="nineButton" destination="up6-Zi-0bG" id="hhf-cT-jlD"/>
+                        <outlet property="oneButton" destination="z94-Rr-lV2" id="0mX-kh-vZv"/>
+                        <outlet property="percentButton" destination="HHp-fh-eLc" id="Q1F-DA-yve"/>
+                        <outlet property="pointButton" destination="EXr-v3-qmG" id="GCA-8y-b2D"/>
+                        <outlet property="resultLabel" destination="cZy-IZ-Vfv" id="FYf-1V-Gz7"/>
+                        <outlet property="sevenButton" destination="oRA-op-TpS" id="2WS-vT-GAH"/>
+                        <outlet property="sixButton" destination="tIK-n1-EgU" id="DUh-TA-ZGp"/>
+                        <outlet property="substractButton" destination="uoS-Kx-tQl" id="5R7-wF-L0R"/>
+                        <outlet property="summButton" destination="IIC-1W-ENB" id="Lk7-Wl-ejS"/>
+                        <outlet property="threeButton" destination="uzZ-QN-ZyV" id="q2W-cL-da0"/>
+                        <outlet property="twoButton" destination="KT7-Pz-tS3" id="lpH-18-OqU"/>
+                        <outlet property="zeroButton" destination="kND-OV-7gh" id="1UA-6O-UON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kz8-gH-9qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.594202898550726" y="-560.49107142857144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
