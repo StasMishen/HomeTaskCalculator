@@ -9,12 +9,12 @@ import UIKit
 
 extension UIView {
 
-    /// Добавление вьюх как сабвью
+    // Добавление вьюх как сабвью
     func addSubviews(_ subviews: UIView...) {
         subviews.forEach { addSubview($0) }
     }
 
-    /// Добавление констрейнтов
+    // Добавление констрейнтов
     func addConstraints(
         centerX: NSLayoutXAxisAnchor? = nil, centerXPadding: CGFloat = 0,
         centerY: NSLayoutYAxisAnchor? = nil, centerYPadding: CGFloat = 0,
